@@ -53,7 +53,7 @@ object NotificationScheduler{
         val am = context.getSystemService(ALARM_SERVICE) as AlarmManager
         am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime(),
-                60000,
+                2*60*1000,
                 pendingIntent)
 
     }
