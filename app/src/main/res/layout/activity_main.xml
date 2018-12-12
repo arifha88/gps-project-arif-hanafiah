@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,15 +7,107 @@
     android:orientation="vertical"
     tools:context=".ui.main.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <TextView
+        android:id="@+id/textLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="64dp"
+        android:text="Latitude"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/textValueLatitude"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.basekotlin.apps.util.customview.CustomRecyclerView
-        android:id="@+id/rv_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+    <TextView
+        android:id="@+id/textLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        app:layout_constraintLeft_toLeftOf="@id/textLatitude"
+        app:layout_constraintRight_toLeftOf="@id/textValueLongitude"
+        app:layout_constraintTop_toBottomOf="@id/textLatitude" />
+
+    <TextView
+        android:id="@+id/textAccuracy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Accuracy"
+        app:layout_constraintLeft_toLeftOf="@id/textLatitude"
+        app:layout_constraintRight_toLeftOf="@id/textValueAccuracy"
+        app:layout_constraintTop_toBottomOf="@id/textLongitude" />
+
+    <TextView
+        android:id="@+id/textTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Time Captured"
+        app:layout_constraintLeft_toLeftOf="@id/textLatitude"
+        app:layout_constraintRight_toLeftOf="@id/textValueTime"
+        app:layout_constraintTop_toBottomOf="@id/textAccuracy" />
+
+    <TextView
+        android:id="@+id/textValueLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        android:text="-"
+        app:layout_constraintLeft_toRightOf="@id/textLatitude"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textLatitude" />
+
+    <TextView
+        android:id="@+id/textValueLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintLeft_toRightOf="@id/textLongitude"
+        app:layout_constraintRight_toRightOf="@id/textValueLatitude"
+        app:layout_constraintTop_toBottomOf="@id/textLatitude" />
+
+    <TextView
+        android:id="@+id/textValueAccuracy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintLeft_toRightOf="@id/textAccuracy"
+        app:layout_constraintRight_toRightOf="@id/textValueLatitude"
+        app:layout_constraintTop_toBottomOf="@id/textLongitude" />
+
+    <TextView
+        android:id="@+id/textValueTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintLeft_toRightOf="@id/textTime"
+        app:layout_constraintRight_toRightOf="@id/textValueLatitude"
+        app:layout_constraintTop_toBottomOf="@id/textAccuracy" />
+
+    <Button
+        android:id="@+id/btnGetGps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Get GPS"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_button_primary"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textValueTime" />
+
+    <Button
+        android:id="@+id/btnShowGps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Show GPS"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_button_primary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGetGps" />
+
+</android.support.constraint.ConstraintLayout>
